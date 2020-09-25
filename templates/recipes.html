@@ -7,10 +7,10 @@
 </head>
 <body>
     {% for recipes in recipes %}
-        {{ recipes.diet-type}}<br>
-        {{ recipes.last-update}}<br>
-        {{ recipes.meal-time}}<br>
-        {{ recipes.recipes}}<br>
+        {{ recipes["diet-type"]}<br>
+        {{ recipes["last-update"]}<br>
+        {{ recipes["meal-time"]}<br>
+        {{ recipes["recipes"]}<br>
     {% endfor %}
 </body>
 </html>
