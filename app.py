@@ -18,6 +18,10 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
+    print('This view works')
+    for recipe in recipes:
+
+        print(recipe)
     return render_template("recipes.html", recipes=recipes)
 
 
