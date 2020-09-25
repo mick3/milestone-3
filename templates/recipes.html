@@ -6,11 +6,9 @@
     <title>Recipes</title>
 </head>
 <body>
-    {% for recipes in recipes %}
-        {{ recipes["diet-type"]}}<br>
-        {{ recipes.["last-update"]}}<br>
-        {{ recipes.["meal-time"]}}<br>
-        {{ recipes.["recipes"]}}<br>
-    {% endfor %}
+    {% for recipe in recipes %}
+  {{ recipe.prep_time }}
+  {{ recipe.cook_time }}
+{% endfor %}
 </body>
 </html>
