@@ -7,9 +7,8 @@ from bson.objectid import ObjectId
 
 app = Flask(__name__)
 
-
-app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 
 mongo = PyMongo(app)
 
@@ -18,8 +17,10 @@ mongo = PyMongo(app)
 @app.route("/get_recipes")
 def get_recipes():
     recipes = mongo.db.recipes.find()
+    recipeList = list(recipes)
+    print(mongo.db)
     print('This view works')
-    for recipe in recipes:
+    for recipe in recipeList:
 
         print(recipe)
     return render_template("recipes.html", recipes=recipes)
