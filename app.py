@@ -25,7 +25,7 @@ def get_recipes():
     for recipe in recipeList:
 
         print(recipe)
-    return render_template("recipes.html", recipes=recipes)
+    return render_template("recipes.html", recipes=recipeList)
 
 
 if __name__ == "__main__":
