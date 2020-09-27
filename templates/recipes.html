@@ -1,10 +1,10 @@
  {% extends "base.html" %}
- {% block content%}
+ {% block content %}
     {% for recipe in recipes %}
         {{ recipe.prep_time }}<br>
         {{ recipe.cook_time }}<br>
-        {{ recipe.meal_time}}<br>
-        {{ recipe.diet_type}}<br>
+        {{ recipe.meal_time }}<br>
+        {{ recipe.diet_type }}<br>
     {% endfor %}
 
 {% endblock%}
