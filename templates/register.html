@@ -10,14 +10,14 @@
         <div class="row">
             <div class="input-field col s12">
             <i class="fas fa-signature"></i>
-            <input id="name" name="name" type="text" class="validate">
+            <input id="name" name="name" type="text"  pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
             <label for="name">Name</label>
         </div>
         <!-- Email address -->
         <div class="row">
             <div class="input-field col s6">
                 <i class="far fa-envelope"></i>
-                <input id="email" name="email" type="email" class="validate">
+                <input id="email" name="email" type="email" class="validate" required>
                 <label for="email">Email</label>
             </div>
         </div>
