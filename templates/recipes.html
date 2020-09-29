@@ -1,22 +1,30 @@
  {% extends "base.html" %}
  {% block content %}
-    {% for recipe in recipes %}
-        {{ recipe.prep_time }}<br>
-        {{ recipe.cook_time }}<br>
-        {{ recipe.meal_time }}<br>
-        {{ recipe.diet_type }}<br>
-    {% endfor %}
 
 <div class="row">
+    {% for recipe in recipes %}
     <div class="col s12 m7">
       <div class="card">
         <div class="card-image">
-          <img src="images/sample-1.jpg">
+          <img src= {{ recipe.photo }}>
           <span class="card-title">Card Title</span>
         </div>
         <div class="card-content">
-          <p>I am a very simple card. I am good at containing small bits of information.
-          I am convenient because I require little markup to use effectively.</p>
+          
+          <strong>prep time:</strong>
+          {{ recipe.prep_time }}<br>
+          <strong>cook time:</strong>
+          {{ recipe.cook_time }}<br>
+          <strong>meal time:</strong>
+          {{ recipe.meal_time }}<br>
+          <strong>diet type:</strong>
+          {{ recipe.diet_type }}<br>
+          <strong>Description:</strong>
+          {{ recipe.description }}<br>
+          <strong>Ingredients:</strong>
+          {{ recipe.ingredients }}<br>
+          <strong>Preparation:</strong>
+          {{ recipe.preparation }}<br>
         </div>
         <div class="card-action">
           <a href="#">This is a link</a>
@@ -24,5 +32,6 @@
       </div>
     </div>
   </div>
+  {% endfor %}
 
 {% endblock%}

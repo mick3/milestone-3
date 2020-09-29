@@ -40,7 +40,8 @@ def register():
 
         register = {
             "name": request.form.get("name").lower(),
-            "email": request.form.get("email").lower()
+            "email": request.form.get("email").lower(),
+
         }
         print(register)
         mongo.db.users.insert_one(register)
