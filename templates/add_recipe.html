@@ -5,21 +5,35 @@
     Add Recipe
     </h3>
 
-    <div class="row">
+    <div class="row card-panel grey lighten-5">
     <form class="col s12">
       <div class="row">
-        <div class="input-field col s6">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">First Name</label>
+        <div class="input-field col s12">
+          <i class="far fa-image"></i>
+          <input id="photo" name="photo" minlength="5" maxlength="50"
+          type="text" class="validate" required>
+          <label for="photo">Photo URL</label>
         </div>
-        <div class="input-field col s6">
-          <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="fas fa-heading"></i>
+          <textarea id="title" name="title" minlength="5" maxlength="200
+          class="materialize-textarea validate" required ></textarea>
+          <label for="title">Title</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="far fa-calendar-alt"></i>
+          <input id="last_updated" name="photo"
+          type="text" class="datepicker validate" required>
+          <label for="last_updated">Last Updated</label>
         </div>
       </div>
     </form>
+    </div>
   </div>
+</div>
 
  {% endblock %}
