@@ -22,11 +22,6 @@ mongo = PyMongo(app)
 def get_recipes():
     recipes = mongo.db.recipes.find()
     recipeList = list(recipes)
-    print(mongo.db)
-    print('This view works')
-    for recipe in recipeList:
-
-        print(recipe)
     return render_template("recipes.html", recipes=recipeList)
 
 @app.route("/register", methods=["GET", "POST"])
@@ -52,8 +47,23 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/add_recipe")
+@app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
+    if request.method == "POST":
+        task = {
+            "photo": request.form.get("photo"),
+            "title": request.form.get("title"),
+            "prep_time": request.form.get("prep_time"),
+            "cook_time": request.form.get("cook_time"),
+            "meal_time": request.form.get("meal_time"),
+            "diet_type": request.form.get("diet_type"),
+            "ingredients": request.form.get("ingredients"),
+            "preparation": request.form.get("preparation")
+
+        }
+        mongo.db.recipes.insert_one(task)
+        flash("Recipe Successfully Added")
+        return redirect(url_for("get_recipes"))
     return render_template("add_recipe.html")
 
 if __name__ == "__main__":
