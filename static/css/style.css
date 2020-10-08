@@ -5,3 +5,7 @@
 .card-title {
     color: black;
 }
+
+.btn-small {
+    margin: 2px;
+}
