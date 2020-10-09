@@ -13,13 +13,20 @@
           <input id="photo" name="photo" minlength="5" maxlength="200"
           type="text" class="validate" required>
           <label for="photo">Photo URL</label>
+          {% for category in categories %}
+                            {% if category.photo == recipe.photo %}
+                                <text area="{{ category.photo }}" selected>{{ category.photo }}</option>
+                            {% else %}
+                                <text area="{{ category.photo }}">{{ category.photo }}</option>
+                            {% endif %}
+                        {% endfor %}
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="title" name="title" minlength="5" maxlength="200"
-          class="materialize-textarea" validate required></textarea>
+          placeholder="{{ recipe.title }}" class="materialize-textarea" validate required></textarea>
           <label for="title">Title</label>
         </div>
       </div>
@@ -27,7 +34,7 @@
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="prep_time" name="prep_time" minlength="5" maxlength="200"
-          class="materialize-textarea" validate required></textarea>
+          placeholder="{{ recipe.prep_time }}" class="materialize-textarea" validate required></textarea>
           <label for="prep_time">Prep Time</label>
         </div>
       </div>
@@ -35,7 +42,7 @@
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="cook_time" name="cook_time" minlength="5" maxlength="200"
-          class="materialize-textarea" validate required></textarea>
+          placeholder="{{ recipe.cook_time }}"class="materialize-textarea" validate required></textarea>
           <label for="cook_time">Cook Time</label>
         </div>
       </div>
@@ -43,7 +50,7 @@
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="meal_time" name="meal_time" minlength="5" maxlength="20"
-          class="materialize-textarea" validate required></textarea>
+          placeholder="{{ recipe.meal_time }}"class="materialize-textarea" validate required></textarea>
           <label for="meal_time">Meal Time (Breakfast, Lunch, or Dinner)</label>
         </div>
       </div>
@@ -51,7 +58,7 @@
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="diet_type" name="diet_type" minlength="5" maxlength="20"
-          class="materialize-textarea" validate required></textarea>
+          cplaceholder="{{ recipe.diet_type }}"lass="materialize-textarea" validate required></textarea>
           <label for="diet_type">Diet Type (Paleo, Keto, for example)</label>
         </div>
       </div>
@@ -59,7 +66,7 @@
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="ingredients" name="ingredients" minlength="5" maxlength="200"
-          class="materialize-textarea" validate required></textarea>
+          placeholder="{{ recipe.ingredients }}"class="materialize-textarea" validate required></textarea>
           <label for="ingredients">Ingredients</label>
         </div>
       </div>
@@ -67,12 +74,13 @@
         <div class="input-field col s12">
           <i class=></i>
           <textarea id="preparation" name="preparation" minlength="5" maxlength="200"
-          class="materialize-textarea" validate required></textarea>
+          placeholder="{{ recipe.preparation }}"class="materialize-textarea" validate required></textarea>
           <label for="preparation">Preparation</label>
         </div>
       </div>
   <div class="row">
-      <button class="btn waves-effect waves-light" type="submit">Edit
+      <a href="{{ url_for('get_recipes') }}" class="btn waves-effect red">Cancel</a>
+      <button class="btn waves-effect waves-light" type="submit">Save
     <i class="material-icons right"></i>
   </button>
   </div>
