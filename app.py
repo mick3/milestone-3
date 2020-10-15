@@ -17,6 +17,7 @@ app.secret_key = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 
 
+""" Route for getting recipes.html """
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
@@ -24,29 +25,7 @@ def get_recipes():
     return render_template("recipes.html", recipes=recipes)
 
 
-@app.route("/register", methods=["GET", "POST"])
-def register():
-    if request.method == "POST":
-        existing_user = mongo.db['email-addresses'].find_one({"email": request.form.get("email").lower()})
-    
-        if existing_user:
-            flash("email already registered")
-            return redirect(url_for("register"))
-
-        register = {
-            "name": request.form.get("name").lower(),
-            "email": request.form.get("email").lower()
-
-        }
-        print(register)
-        mongo.db.users.insert_one(register)
-
-        #put new user into 'session' cookie
-        session["email"] = request.form.get("email").lower()
-        flash("Registration successful")
-    return render_template("register.html")
-
-
+""" Route for getting add_recipe.html """
 @app.route("/add_recipe", methods=["GET", "POST"])
 def add_recipe():
     if request.method == "POST":
@@ -64,12 +43,12 @@ def add_recipe():
         mongo.db.recipes.insert_one(task)
         flash("Recipe Successfully Added")
         return redirect(url_for("get_recipes"))
-        return render_template("add_recipe.html")
 
     categories = mongo.db.categories.find().sort("category_name", 1)
     return render_template("add_recipe.html", categories=categories)
 
 
+""" Route for getting edit_recipe.html """
 @app.route("/edit_recipe/<recipe_id>", methods=["GET", "POST"])
 def edit_recipe(recipe_id):
     if request.method == "POST":

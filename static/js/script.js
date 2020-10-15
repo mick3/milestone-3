@@ -3,3 +3,7 @@ $(document).ready(function(){
     $('select').formSelect();
     $('.datepicker').datepicker()
   });
+
+function myFunction() {
+  alert('The image could not be loaded.');
+}

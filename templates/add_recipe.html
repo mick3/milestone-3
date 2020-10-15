@@ -9,7 +9,7 @@
         <div class="input-field col s12">
           <i class="far fa-image"></i>
           <input id="photo" name="photo" minlength="5" maxlength="200"
-          type="text" class="validate" required>
+          type="text" class="validate" required onerror="myFunction() >
           <label for="photo">Photo URL</label>
         </div>
       </div>
@@ -24,7 +24,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class=></i>
-          <textarea id="prep_time" name="prep_time" minlength="5" maxlength="200"
+          <textarea id="prep_time" name="prep_time" minlength="5" maxlength="20"
           class="materialize-textarea" validate required></textarea>
           <label for="prep_time">Prep Time</label>
         </div>
@@ -32,7 +32,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class=></i>
-          <textarea id="cook_time" name="cook_time" minlength="5" maxlength="200"
+          <textarea id="cook_time" name="cook_time" minlength="5" maxlength="20"
           class="materialize-textarea" validate required></textarea>
           <label for="cook_time">Cook Time</label>
         </div>
@@ -42,7 +42,12 @@
           <i class=></i>
           <textarea id="meal_time" name="meal_time" minlength="5" maxlength="20"
           class="materialize-textarea" validate required></textarea>
-          <label for="meal_time">Meal Time (Breakfast, Lunch, or Dinner)</label>
+          <label for="meal_time">Meal Time:</label>
+          <select name="meal_time" id="meal_time">
+          <option value="Breakfast">Breakfast</option>
+          <option value="Lunch">Lunch</option>
+          <option value="Dinner">Dinner</option>
+          </select>
         </div>
       </div>
       <div class="row">
@@ -50,13 +55,18 @@
           <i class=></i>
           <textarea id="diet_type" name="diet_type" minlength="5" maxlength="20"
           class="materialize-textarea" validate required></textarea>
-          <label for="diet_type">Diet Type (Paleo, Keto, for example)</label>
+          <label for="diet_type">Diet Type:</label>
+          <select name="diet_type" id="diet_type">
+          <option value="Keto">Keto</option>
+          <option value="Paleo">Paleo</option>
+          <option value="Other">Other</option>
+          </select>
         </div>
       </div>
   <div class="row">
         <div class="input-field col s12">
           <i class=></i>
-          <textarea id="ingredients" name="ingredients" minlength="5" maxlength="200"
+          <textarea id="ingredients" name="ingredients" minlength="5" maxlength="1000"
           class="materialize-textarea" validate required></textarea>
           <label for="ingredients">Ingredients</label>
         </div>
@@ -64,7 +74,7 @@
       <div class="row">
         <div class="input-field col s12">
           <i class=></i>
-          <textarea id="preparation" name="preparation" minlength="5" maxlength="200"
+          <textarea id="preparation" name="preparation" minlength="5" maxlength="1000"
           class="materialize-textarea" validate required></textarea>
           <label for="preparation">Preparation</label>
         </div>

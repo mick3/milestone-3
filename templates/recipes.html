@@ -3,7 +3,7 @@
 
 <div class="row">
     {% for recipe in recipes %}
-    <div class="col s12 m7">
+    <div class="col s12 m4">
       <div class="card">
         <div class="card-image">
           <img src= {{ recipe.photo }}>
@@ -12,7 +12,7 @@
         <div class="card-content">
 
           <strong>Title:</strong>
-          {{ recipe.title }}</br>
+          {{ recipe.title }}<br>
           <strong>Prep Time:</strong>
           {{ recipe.prep_time }}<br>
           <strong>Cook Time:</strong>
@@ -36,5 +36,5 @@
     </div>
   </div>
   {% endfor %}
-
+</div>
 {% endblock%}
