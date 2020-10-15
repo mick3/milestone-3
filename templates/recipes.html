@@ -1,28 +1,26 @@
  {% extends "base.html" %}
  {% block content %}
 
-
-
 <div class="row">
     {% for recipe in recipes %}
     <div class="col s12 m7">
       <div class="card">
         <div class="card-image">
           <img src= {{ recipe.photo }}>
-          <span class="card-title">Card Title</span>
+          <span class="card-title"></span>
         </div>
         <div class="card-content">
 
-          <strong>prep time:</strong>
+          <strong>Title:</strong>
+          {{ recipe.title }}</br>
+          <strong>Prep Time:</strong>
           {{ recipe.prep_time }}<br>
-          <strong>cook time:</strong>
+          <strong>Cook Time:</strong>
           {{ recipe.cook_time }}<br>
-          <strong>meal time:</strong>
+          <strong>Meal Time:</strong>
           {{ recipe.meal_time }}<br>
-          <strong>diet type:</strong>
+          <strong>Diet Type:</strong>
           {{ recipe.diet_type }}<br>
-          <strong>Description:</strong>
-          {{ recipe.description }}<br>
           <strong>Ingredients:</strong>
           {{ recipe.ingredients }}<br>
           <strong>Preparation:</strong>

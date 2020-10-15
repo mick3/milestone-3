@@ -20,9 +20,9 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_recipes")
 def get_recipes():
-    recipes = mongo.db.recipes.find()
-    recipeList = list(recipes)
-    return render_template("recipes.html", recipes=recipeList)
+    recipes = list(mongo.db.recipes.find())
+    return render_template("recipes.html", recipes=recipes)
+
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
@@ -35,7 +35,7 @@ def register():
 
         register = {
             "name": request.form.get("name").lower(),
-            "email": request.form.get("email").lower(),
+            "email": request.form.get("email").lower()
 
         }
         print(register)
