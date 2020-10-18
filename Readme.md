@@ -27,7 +27,7 @@
 ##### I deployed the application to Heroku and github via gitpod with the pre-ordained setup Code Institute has set up for us in our projects.
 
 # Acknowledgments
-##### I used the "Task Manager" demo videos for a lot of my inspiration and know-how to do the project. The code is similar but it isn't copied.
+##### I used the "Task Manager" demo videos for a lot of my inspiration and know-how to do the project. 
 
 # Media
 ##### The photos and body copy used for the recipes that already exist on the web app were taken from www.weelicious.com and their respective recipes already listed on the website.
